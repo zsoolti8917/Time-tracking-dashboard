@@ -1,46 +1,52 @@
-const cards = document.querySelectorAll('.card');
-const links = document.querySelectorAll('.link');
+const cards = document.querySelectorAll(".card");
+const links = document.querySelectorAll(".link");
 
 // Fetch and parse the JSON data
-fetch('data.json')
-  .then(response => response.json())
-  .then(data => {
+fetch("data.json")
+  .then((response) => response.json())
+  .then((data) => {
     // Loop through the cards and update the data
     cards.forEach((card, index) => {
-      const title = card.querySelector('.card-type');
-      const current = card.querySelector('.current-hours');
-      const previous = card.querySelector('.previous-hours');
+      const title = card.querySelector(".card-type");
+      const current = card.querySelector(".current-hours");
+      const previous = card.querySelector(".previous-hours");
 
       // Initial data display
       title.textContent = data[index].title;
-      current.textContent = data[index].timeframes.weekly.current + 'hrs';
-      previous.textContent = "Last week - " + data[index].timeframes.weekly.previous + 'hrs';
+      current.textContent = data[index].timeframes.weekly.current + "hrs";
+      previous.textContent =
+        "Last week - " + data[index].timeframes.weekly.previous + "hrs";
 
       // Link event listeners
-      links.forEach(link => {
-        link.addEventListener('click', (e) => {
+      links.forEach((link) => {
+        link.addEventListener("click", (e) => {
           e.preventDefault(); // Prevent the default link behavior
 
-          const timeframe = link.getAttribute('data-timeframe');
-          current.textContent = data[index].timeframes[timeframe].current + 'hrs';
-            const reducedName = timeframe.replace(/ly$/i, '');
-            const goodName = reducedName.replace(/i/i, 'y')
-            goodName.charAt(0).toUpperCase() + goodName.slice(1);
+          const timeframe = link.getAttribute("data-timeframe");
+          current.textContent =
+            data[index].timeframes[timeframe].current + "hrs";
+          const reducedName = timeframe.replace(/ly$/i, "");
+          const goodName = reducedName.replace(/i/i, "y");
 
-          previous.textContent = 'Last ' + goodName + ' - ' + data[index].timeframes[timeframe].previous + 'hrs';
-          links.forEach(link => link.classList.remove('activated'));
-          link.classList.add('activated');
+          previous.textContent =
+            "Last " +
+            goodName +
+            " - " +
+            data[index].timeframes[timeframe].previous +
+            "hrs";
+          links.forEach((link) => link.classList.remove("activated"));
+          link.classList.add("activated");
         });
       });
     });
   })
-  .catch(error => console.error(error));
+  .catch((error) => console.error(error));
 
-  const tiltCards = document.querySelectorAll('.tilt-card');
+const tiltCards = document.querySelectorAll(".tilt-card");
 
-tiltCards.forEach(card => {
-  card.addEventListener('mousemove', handleMouseMove);
-  card.addEventListener('mouseout', handleMouseOut);
+tiltCards.forEach((card) => {
+  card.addEventListener("mousemove", handleMouseMove);
+  card.addEventListener("mouseout", handleMouseOut);
 });
 
 function handleMouseMove(event) {
@@ -60,5 +66,5 @@ function handleMouseMove(event) {
 
 function handleMouseOut(event) {
   const card = event.currentTarget;
-  card.style.transform = '';
+  card.style.transform = "";
 }
