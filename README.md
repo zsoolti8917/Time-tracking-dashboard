@@ -40,7 +40,7 @@ Finished project on a 375px screen
 ### Links
 
 - Solution URL: [solution on my frontend mentor profile](https://www.frontendmentor.io/profile/zsoltvarju)
-- Live Site URL: [live site on netlify](https://singular-piroshki-ca5a01.netlify.app/)
+- Live Site URL: [live site on netlify](https://helpful-tanuki-5f3094.netlify.app/)
 
 ## My process
 
@@ -52,14 +52,22 @@ Finished project on a 375px screen
 - CSS Grid
 - Mobile-first workflow
 - Javascript
-- 
+  
 ### What I learned
 
+The most I learned from this project is, I think, from the JavaScript side. I struggled a lot with it to figure out how to work with JSON/objects, but in the end, it turns out it's not even that hard, so I'm very happy with this project. I didn't pay as much attention to the CSS this time because I wanted to focus on the JavaScript part. However, I also had struggles with CSS. I had to look up a lot of things, and I still have a lot to learn about it.
+
+There are two main problems that I couldn't solve:
+
+- In this project, I didn't use the mobile-first approach, and I couldn't set the spacing correctly on the phone. If you check the code, there are double gaps between the cards, and I couldn't figure out why.
+- There are "bleeds" around the cards. The background color of the card shines through to the front one because they are the same size. I'm not sure how to solve this problem.
+
+Other than these, I'm happy with the result. I know it could be done much better, but I want to move on to the next one.
 
 
 ### Continued development
 
-
+I dont plan to revisit this project, i think it is finished according to my current knowledge.
 
 ### Useful resources
 
